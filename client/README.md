@@ -1,4 +1,10 @@
-# social-client
+# Client
+
+## Project to docker
+```
+docker build -t vue:1.0.0 .
+docker run -p 3000:3000 vue:1.0.0
+```
 
 ## Project setup
 ```
