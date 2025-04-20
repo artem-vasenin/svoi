@@ -2,6 +2,7 @@ from fastapi import FastAPI, Query
 import uvicorn
 from typing import Optional
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 class SPerson(BaseModel):
     lst: str
@@ -9,6 +10,14 @@ class SPerson(BaseModel):
     lastName: str
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:8080"],  # Vue dev server
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 mansLst = [
     {"id": 1, "firstName": "Petr", "lastName": "Petrov"},
@@ -30,6 +39,9 @@ async def get_list(
         return womenLst[:limit] if limit else womenLst
     else:
         return []
+@app.get("/")
+async def show_home() -> str:
+    return 'Hello from API!'
 @app.post("/")
 async def add_to_list(data: SPerson) -> SPerson:
     if data.lst == "man":

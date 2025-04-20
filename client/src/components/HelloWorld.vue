@@ -10,6 +10,9 @@
         />
       </v-col>
     </v-row>
+    <v-row>
+      <v-col>{{text}}</v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -17,6 +20,7 @@
 
 export default {
   name: 'HelloWorld',
+  props: ['text'],
   data: () => ({}),
 }
 </script>
