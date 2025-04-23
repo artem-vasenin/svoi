@@ -2,7 +2,7 @@
   <nav class="nav">
     <ul class="nav__list">
       <li class="nav__list-item" v-for="(i, idx) in list" :key="idx">
-        <router-link :to="i.url">{{i.title}}</router-link>
+        <router-link class="nav__list-link" :to="i.url">{{i.title}}</router-link>
       </li>
     </ul>
   </nav>
@@ -29,10 +29,16 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 60px;
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+  &__list-link {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
   }
 }
 </style>

@@ -28,5 +28,7 @@ export default {
 }
 .main {
   flex: 1;
+  background: url("./assets/bg-light.png") no-repeat center center;
+  background-size: contain;
 }
 </style>
