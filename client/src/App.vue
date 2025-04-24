@@ -22,13 +22,15 @@ export default {
 </script>
 
 <style lang="scss">
+.main {
+  flex: 1;
+  background: #C9E7DDFF;
+}
 .main-container {
   display: flex;
   flex-direction: column;
-}
-.main {
-  flex: 1;
-  background: url("./assets/bg-light.png") no-repeat center center;
+  background: #C9E7DDFF url("./assets/reg-bg.jpg") no-repeat bottom right;
   background-size: contain;
+  height: 100%;
 }
 </style>
