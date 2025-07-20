@@ -24,6 +24,7 @@ html, .body {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1;
 }
 .menu__link, .logo__link, .login__link {
     text-decoration: none;
@@ -140,6 +141,7 @@ html, .body {
 }
 .theme-switcher__icon-light, .theme-switcher__icon-dark {
     font-size: 24px;
+    color: var(--color-light);
 }
 .dd__menu-list {
     list-style: none;
