@@ -33,7 +33,6 @@ html, .body {
 .menu {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 .dd__menu {
     display: flex;
@@ -164,7 +163,7 @@ html, .body {
 .login {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 .login__icon {
     font-size: 36px;
@@ -195,8 +194,19 @@ html, .body {
 }
 
 .form {
-    p {
-        margin-bottom: 16px;
+    .form__input-wrap {
+        padding-bottom: 16px;
+    }
+    .form__input-wrap-check {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: var(--checkbox-label-text-color);
+    }
+    .form__label-check {
+        font-size: 14px;
+        line-height: 20px;
+        max-width: 180px;
     }
     .form__input {
         width: 100%;

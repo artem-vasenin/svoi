@@ -2,3 +2,8 @@
     --title-text-color: var(--color-green-1);
     --subtitle-text-color: var(--color-brown);
 }
+
+.dark {
+    --title-text-color: var(--color-orange);
+    --subtitle-text-color: var(--color-light);
+}

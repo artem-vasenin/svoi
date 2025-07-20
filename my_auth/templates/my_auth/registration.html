@@ -20,16 +20,16 @@
             <div class="col">
                 <form method="post" class="form">
                     {% csrf_token %}
-                    <p>
+                    <div class="form__input-wrap">
                         <input name="name" type="text" class="form__input" placeholder="Ваше имя*" required>
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form__input-wrap">
                         <input name="nick" type="text" class="form__input" placeholder="Ваш псевдоним*" required>
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form__input-wrap">
                         <input name="email" type="email" class="form__input" placeholder="Ваш E-mail*" required>
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form__input-wrap">
                         <input
                             name="phone"
                             type="tel"
@@ -39,11 +39,11 @@
                             pattern="^\+7\d{10}$"
                             title="Введите номер в формате +7XXXXXXXXXX (11 цифр)"
                         >
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form__input-wrap">
                         <input name="birthday" type="date" class="form__input" placeholder="Ваш день рождения*" required>
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form__input-wrap">
                         <select name="reason" class="form__input" required>
                             <option value="" disabled>Цель знакомства*</option>
                             <option value="Общение">Общение</option>
@@ -51,17 +51,17 @@
                             <option value="Дружба">Дружба</option>
                             <option value="Взаимопомощь">Взаимопомощь</option>
                         </select>
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form__input-wrap">
                         <input name="password" type="password" class="form__input" placeholder="Пароль*" required>
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form__input-wrap">
                         <input name="passwordConfirm" type="password" class="form__input" placeholder="Повтор пароля*" required>
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form__input-wrap form__input-wrap-check">
                         <input type="checkbox" id="check" name="agree" required>
-                        <label for="check">Согласие на обработку персональных данных*</label>
-                    </p>
+                        <label for="check" class="form__label-check">Согласие на <a href="#">обработку персональных данных</a>*</label>
+                    </div>
                     <button type="submit" class="form__submit">Зарегистрироваться</button>
                 </form>
             </div>
