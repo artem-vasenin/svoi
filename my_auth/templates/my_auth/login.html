@@ -3,11 +3,36 @@
 
 {% block title %}Войти в приложение{% endblock %}
 
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'my_auth/css/variables.css' %}">
+    <link rel="stylesheet" href="{% static 'my_auth/css/styles.css' %}">
+{% endblock %}
+
 {% block content %}
-    <div class="container">
+    <div class="container pt-5 pb-5">
         <div class="row">
             <div class="col">
-                <h1>Войти в приложение</h1>
+                <h1 class="title">Сайт знакомств для людей с ограниченными возможностями и для участников СВО</h1>
+                <h2 class="subtitle">Добро пожаловать к нам для поиска друзей, товарищей по духу, любви!</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form method="post" class="form">
+                    {% csrf_token %}
+                    <p>
+                        <input type="email" id="emailTextInput" class="form__input" placeholder="E-mail*" required>
+                    </p>
+                    <p>
+                        <input type="password" id="passwordTextInput" class="form__input" placeholder="Пароль" required>
+                    </p>
+                    <button type="submit" class="form__submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col pt-5 text-center">
+                <a href="{% url 'my_auth:registration' %}" class="reg-link">Зарегистрироваться в системе</a>
             </div>
         </div>
     </div>

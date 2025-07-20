@@ -3,12 +3,72 @@
 
 {% block title %}Зарегистрироваться{% endblock %}
 
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'my_auth/css/variables.css' %}">
+    <link rel="stylesheet" href="{% static 'my_auth/css/styles.css' %}">
+{% endblock %}
+
 {% block content %}
-    <div class="container">
+    <div class="container pt-5 pb-5">
         <div class="row">
             <div class="col">
-                <h1>Сайт знакомств для людей с ограниченными возможностями и для участников СВО</h1>
-                <h2>Добро пожаловать к нам  для поиска друзей, товарищей по духу, любви!</h2>
+                <h1 class="title">Сайт знакомств для людей с ограниченными возможностями и для участников СВО</h1>
+                <h2 class="subtitle">Добро пожаловать к нам для поиска друзей, товарищей по духу, любви!</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form method="post" class="form">
+                    {% csrf_token %}
+                    <p>
+                        <input name="name" type="text" class="form__input" placeholder="Ваше имя*" required>
+                    </p>
+                    <p>
+                        <input name="nick" type="text" class="form__input" placeholder="Ваш псевдоним*" required>
+                    </p>
+                    <p>
+                        <input name="email" type="email" class="form__input" placeholder="Ваш E-mail*" required>
+                    </p>
+                    <p>
+                        <input
+                            name="phone"
+                            type="tel"
+                            class="form__input"
+                            placeholder="Ваш телефон*"
+                            required
+                            pattern="^\+7\d{10}$"
+                            title="Введите номер в формате +7XXXXXXXXXX (11 цифр)"
+                        >
+                    </p>
+                    <p>
+                        <input name="birthday" type="date" class="form__input" placeholder="Ваш день рождения*" required>
+                    </p>
+                    <p>
+                        <select name="reason" class="form__input" required>
+                            <option value="" disabled>Цель знакомства*</option>
+                            <option value="Общение">Общение</option>
+                            <option value="Любовь">Любовь</option>
+                            <option value="Дружба">Дружба</option>
+                            <option value="Взаимопомощь">Взаимопомощь</option>
+                        </select>
+                    </p>
+                    <p>
+                        <input name="password" type="password" class="form__input" placeholder="Пароль*" required>
+                    </p>
+                    <p>
+                        <input name="passwordConfirm" type="password" class="form__input" placeholder="Повтор пароля*" required>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="check" name="agree" required>
+                        <label for="check">Согласие на обработку персональных данных*</label>
+                    </p>
+                    <button type="submit" class="form__submit">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col pt-5 text-center">
+                <a href="{% url 'my_auth:login' %}" class="reg-link">Войти в систему</a>
             </div>
         </div>
     </div>
