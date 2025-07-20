@@ -5,6 +5,8 @@ html, .body {
 .body {
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
 }
 .main {
     flex: 1;
@@ -203,6 +205,22 @@ html, .body {
         gap: 20px;
         color: var(--checkbox-label-text-color);
     }
+    .form__input-wrap-select {
+        position: relative;
+        z-index: 1;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-left: 2px solid var(--color-dark);
+            border-bottom: 2px solid var(--color-dark);
+            top: calc(50% - 14px);
+            right: 22px;
+            transform: rotate(-45deg);
+        }
+    }
     .form__label-check {
         font-size: 14px;
         line-height: 20px;
@@ -216,6 +234,11 @@ html, .body {
         border-bottom: 1px solid var(--form-field-border-color);
         padding: 10px 20px;
         font-size: 16px;
+    }
+    .form__input-select {
+        appearance: none;      /* для Chrome */
+        -webkit-appearance: none; /* Safari */
+        -moz-appearance: none;    /* Firefox */
     }
     .form__submit {
         width: 100%;
