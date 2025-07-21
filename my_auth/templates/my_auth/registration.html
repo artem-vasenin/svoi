@@ -11,13 +11,17 @@
 {% block content %}
     <div class="container pt-5 pb-5">
         <div class="row">
-            <div class="col">
+            <div class="col col-lg-8">
                 <h1 class="title">Сайт знакомств для людей с ограниченными возможностями и для участников СВО</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-6">
                 <h2 class="subtitle">Добро пожаловать к нам для поиска друзей, товарищей по духу, любви!</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col col-lg-5">
                 <form method="post" class="form">
                     {% csrf_token %}
                     <div class="form__input-wrap">
@@ -59,7 +63,7 @@
                         <input name="passwordConfirm" type="password" class="form__input" placeholder="Повтор пароля*" required>
                     </div>
                     <div class="form__input-wrap form__input-wrap-check">
-                        <input type="checkbox" id="check" name="agree" required>
+                        <input type="checkbox" id="check" name="agree" class="form__input-check" required>
                         <label for="check" class="form__label-check">Согласие на <a href="#">обработку персональных данных</a>*</label>
                     </div>
                     <button type="submit" class="form__submit">Зарегистрироваться</button>
@@ -67,7 +71,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col pt-5 text-center">
+            <div class="col col-lg-5 pt-5 text-center">
                 <a href="{% url 'my_auth:login' %}" class="reg-link">Войти в систему</a>
             </div>
         </div>

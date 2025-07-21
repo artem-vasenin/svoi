@@ -9,6 +9,8 @@ const setTheme = (val) => {
         body.removeClass('light');
         themeSwitcherInner.addClass('off');
     }
+    const main = $('.main');
+    main.css('background-image', `url(${main.data(theme)})`);
     body.addClass(theme);
 };
 

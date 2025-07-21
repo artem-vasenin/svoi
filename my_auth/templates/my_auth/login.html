@@ -11,13 +11,17 @@
 {% block content %}
     <div class="container pt-5 pb-5">
         <div class="row">
-            <div class="col">
+            <div class="col col-lg-8">
                 <h1 class="title">Сайт знакомств для людей с ограниченными возможностями и для участников СВО</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-6">
                 <h2 class="subtitle">Добро пожаловать к нам для поиска друзей, товарищей по духу, любви!</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col col-lg-5">
                 <form method="post" class="form">
                     {% csrf_token %}
                     <p>
@@ -31,7 +35,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col pt-5 text-center">
+            <div class="col col-lg-5 pt-5 text-center">
                 <a href="{% url 'my_auth:registration' %}" class="reg-link">Зарегистрироваться в системе</a>
             </div>
         </div>
