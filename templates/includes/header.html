@@ -1,0 +1,43 @@
+{% load static %}
+<header class="header" id="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-3 d-lg-none menu">
+                <button class="menu__link" id="mobile-menu">
+                    <i class="fa-solid fa-bars menu__icon"></i>
+                </button>
+            </div>
+            <div class="col-6 col-lg-1 logo text-center text-lg-start">
+                <a href="{% url 'my_auth:login' %}" class="logo__link">
+                    <img src="{% static 'global/img/logo.png' %}" alt="logo" class="logo__img"/>
+                </a>
+            </div>
+            <div class="col-lg-10 d-none d-lg-flex align-items-center justify-content-center dt-menu">
+                <nav class="td-menu-nav">
+                    <ul class="dt-menu-list d-flex justify-content-center align-items-center gap-5 m-0 p-0">
+                        <li class="dt-menu-item">
+                            <a href="{% url 'my_auth:logout' %}" class="dt-menu-link">Знакомства</a>
+                        </li>
+                        <li class="dt-menu-item">
+                            <a href="{% url 'my_auth:logout' %}" class="dt-menu-link">Форум</a>
+                        </li>
+                        <li class="dt-menu-item">
+                            <a href="{% url 'my_auth:logout' %}" class="dt-menu-link">Информация</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-3 col-lg-1 login">
+                {% if user.is_authenticated %}
+                <a href="{% url 'my_auth:logout' %}" class="login__link">
+                    <img src="{% static 'global/img/logout.svg' %}" alt="login" class="fa-solid fa-arrow-right-to-bracket login__icon"/>
+                </a>
+                {% else %}
+                <a href="{% url 'my_auth:login' %}" class="login__link">
+                    <img src="{% static 'global/img/login.svg' %}" alt="login" class="fa-solid fa-arrow-right-to-bracket login__icon"/>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</header>

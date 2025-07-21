@@ -12,48 +12,7 @@
     {% block styles %}{% endblock %}
 </head>
 <body class="body light">
-    <header class="header" id="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-3 d-lg-none menu">
-                    <button class="menu__link" id="mobile-menu">
-                        <i class="fa-solid fa-bars menu__icon"></i>
-                    </button>
-                </div>
-                <div class="col-6 col-lg-1 logo text-center text-lg-start">
-                    <a href="{% url 'my_auth:login' %}" class="logo__link">
-                        <img src="{% static 'global/img/logo.png' %}" alt="logo" class="logo__img"/>
-                    </a>
-                </div>
-                <div class="col-lg-10 d-none d-lg-flex align-items-center justify-content-center dt-menu">
-                    <nav class="td-menu-nav">
-                        <ul class="dt-menu-list d-flex justify-content-center align-items-center gap-5 m-0 p-0">
-                            <li class="dt-menu-item">
-                                <a href="{% url 'my_auth:logout' %}" class="dt-menu-link">Знакомства</a>
-                            </li>
-                            <li class="dt-menu-item">
-                                <a href="{% url 'my_auth:logout' %}" class="dt-menu-link">Форум</a>
-                            </li>
-                            <li class="dt-menu-item">
-                                <a href="{% url 'my_auth:logout' %}" class="dt-menu-link">Информация</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-3 col-lg-1 login">
-                    {% if user.is_authenticated %}
-                    <a href="{% url 'my_auth:logout' %}" class="login__link">
-                        <img src="{% static 'global/img/logout.svg' %}" alt="login" class="fa-solid fa-arrow-right-to-bracket login__icon"/>
-                    </a>
-                    {% else %}
-                    <a href="{% url 'my_auth:login' %}" class="login__link">
-                        <img src="{% static 'global/img/login.svg' %}" alt="login" class="fa-solid fa-arrow-right-to-bracket login__icon"/>
-                    </a>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </header>
+    {% include 'includes/header.html' %}
 
     <main
         class="main"
@@ -61,67 +20,9 @@
         data-dark="{% static 'global/img/bg-dark.webp' %}"
     >{% block content %}<h1>Auth</h1>{% endblock %}</main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="d-none d-lg-block col-lg-3 order-lg-1 logo text-center text-lg-start">
-                    <a href="{% url 'my_auth:login' %}" class="logo__link">
-                        <img src="{% static 'global/img/logo.png' %}" alt="logo" class="logo__img"/>
-                    </a>
-                </div>
+    {% include 'includes/footer.html' %}
 
-                <div class="col-12 col-lg-3 order-lg-3 footer__icons">
-                    <div class="footer__icon">
-                        <a href="" class="footer__icon-link">
-                            <i class="fa-solid fa-phone"></i>
-                        </a>
-                    </div>
-                    <div class="footer__icon">
-                        <a href="" class="footer__icon-link">
-                            <i class="fa-solid fa-comments"></i>
-                        </a>
-                    </div>
-                    <div class="footer__icon">
-                        <a href="" class="footer__icon-link">
-                            <i class="fa-solid fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-12 col-lg-6 order-lg-2 pt-lg-3 footer__policy text-center">
-                    <a href="" class="footer__policy-link">
-                        Политика конфиденциальности
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <div class="dd__menu" id="dd-menu">
-        <div class="dd__menu-top">
-            <div class="theme-switcher" id="theme-switcher">
-                <div class="theme-switcher__inner" id="theme-switcher-inner">
-                    <div class="theme-switcher__light">
-                        <i class="fa-regular fa-sun theme-switcher__icon-light"></i>
-                    </div>
-                    <div class="theme-switcher__center"></div>
-                    <div class="theme-switcher__dark">
-                        <i class="fa-regular fa-moon theme-switcher__icon-dark"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="dd__menu-close">
-                <button class="dd__menu-close-link" id="mobile-menu-close">
-                    <i class="fa-regular fa-circle-xmark dd__menu-close-icon"></i>
-                </button>
-            </div>
-        </div>
-        <ul class="dd__menu-list">
-            <li class="dd__menu-item"><a href="#" class="dd__menu-link">Знакомства</a></li>
-            <li class="dd__menu-item"><a href="#" class="dd__menu-link">Форум</a></li>
-            <li class="dd__menu-item"><a href="#" class="dd__menu-link">Информация</a></li>
-        </ul>
-    </div>
+    {% include 'includes/mobile-menu.html' %}
     <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'jq/jq.js' %}"></script>
