@@ -25,10 +25,21 @@
                 <form method="post" class="form">
                     {% csrf_token %}
                     <p>
-                        <input type="email" id="emailTextInput" class="form__input" placeholder="E-mail*" required>
+                        <input
+                            type="text"
+                            name="username"
+                            class="form__input"
+                            placeholder="E-mail*"
+                            autocapitalize="off"
+                        >
                     </p>
                     <p>
-                        <input type="password" id="passwordTextInput" class="form__input" placeholder="Пароль" required>
+                        <input
+                            type="password"
+                            name="password"
+                            class="form__input"
+                            placeholder="Пароль"
+                        >
                     </p>
                     <button type="submit" class="form__submit">Отправить</button>
                 </form>
@@ -36,7 +47,7 @@
         </div>
         <div class="row">
             <div class="col col-lg-5 pt-5 text-center">
-                <a href="{% url 'my_auth:registration' %}" class="reg-link">Зарегистрироваться в системе</a>
+                <a href="{% url 'my_auth:registration' %}" class="reg-link form__link">Зарегистрироваться в системе</a>
             </div>
         </div>
     </div>

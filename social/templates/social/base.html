@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Auth{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fa/css/fa.min.css' %}">
+    <link rel="stylesheet" href="{% static 'global/css/variables.css' %}">
+    <link rel="stylesheet" href="{% static 'global/css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    {% block styles %}{% endblock %}
+</head>
+<body class="body light">
+    {% include 'includes/header.html' %}
+
+    <main class="main">{% block content %}<h1>Auth</h1>{% endblock %}</main>
+
+    {% include 'includes/footer.html' %}
+
+    {% include 'includes/mobile-menu.html' %}
+    <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'jq/jq.js' %}"></script>
+    <script src="{% static 'global/js/scripts.js' %}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

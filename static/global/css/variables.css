@@ -45,6 +45,7 @@
     --form-field-border-color: var(--color-gray);
     --form-btn-submit-bg-color: var(--color-orange);
     --checkbox-label-text-color: var(--color-brown);
+    --form-link-text-color: var(--color-dark);
 }
 
 .dark {
@@ -62,4 +63,5 @@
 
     /* Form */
     --checkbox-label-text-color: var(--color-light);
+    --form-link-text-color: var(--color-light);
 }

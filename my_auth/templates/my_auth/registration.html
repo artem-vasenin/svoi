@@ -25,10 +25,10 @@
                 <form method="post" class="form">
                     {% csrf_token %}
                     <div class="form__input-wrap">
-                        <input name="name" type="text" class="form__input" placeholder="Ваше имя*" required>
+                        <input name="first_name" type="text" class="form__input" placeholder="Ваше имя*" required>
                     </div>
                     <div class="form__input-wrap">
-                        <input name="nick" type="text" class="form__input" placeholder="Ваш псевдоним*" required>
+                        <input name="username" type="text" class="form__input" placeholder="Ваш логин*" required>
                     </div>
                     <div class="form__input-wrap">
                         <input name="email" type="email" class="form__input" placeholder="Ваш E-mail*" required>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="form__input-wrap form__input-wrap-check">
                         <input type="checkbox" id="check" name="agree" class="form__input-check" required>
-                        <label for="check" class="form__label-check">Согласие на <a href="#">обработку персональных данных</a>*</label>
+                        <label for="check" class="form__label-check">Согласие на <a class="form__link" href="#">обработку персональных данных</a>*</label>
                     </div>
                     <button type="submit" class="form__submit">Зарегистрироваться</button>
                 </form>
@@ -72,7 +72,7 @@
         </div>
         <div class="row">
             <div class="col col-lg-5 pt-5 text-center">
-                <a href="{% url 'my_auth:login' %}" class="reg-link">Войти в систему</a>
+                <a href="{% url 'my_auth:login' %}" class="reg-link form__link">Войти в систему</a>
             </div>
         </div>
     </div>

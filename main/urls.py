@@ -21,9 +21,13 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
+from social.views import DashboardView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', DashboardView.as_view(), name='dashboard'),
     path('auth/', include('my_auth.urls')),
+    path('social/', include('social.urls')),
 ]
 
 if settings.DEBUG:
