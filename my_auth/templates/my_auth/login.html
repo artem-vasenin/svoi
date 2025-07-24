@@ -24,23 +24,7 @@
             <div class="col col-lg-5">
                 <form method="post" class="form">
                     {% csrf_token %}
-                    <p>
-                        <input
-                            type="text"
-                            name="username"
-                            class="form__input"
-                            placeholder="E-mail*"
-                            autocapitalize="off"
-                        >
-                    </p>
-                    <p>
-                        <input
-                            type="password"
-                            name="password"
-                            class="form__input"
-                            placeholder="Пароль"
-                        >
-                    </p>
+                    {{ form.as_p }}
                     <button type="submit" class="form__submit">Отправить</button>
                 </form>
             </div>

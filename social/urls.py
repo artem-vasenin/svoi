@@ -5,5 +5,5 @@ from .views import DashboardView
 app_name = 'social'
 
 urlpatterns = [
-    path('dashboard/', DashboardView.as_view(), name='dashboard'),
+    # path('dashboard/', DashboardView.as_view(), name='dashboard'),
 ]
