@@ -9,6 +9,8 @@
     --color-green-light-a4: rgba(232, 245, 233, 0.4);
     --color-green-light-a95: rgba(232, 245, 233, 0.95);
 
+    --color-red: red;
+
     --color-brown: #3E2723;
 
     --color-light: #fff;
@@ -46,6 +48,7 @@
     --form-btn-submit-bg-color: var(--color-orange);
     --checkbox-label-text-color: var(--color-brown);
     --form-link-text-color: var(--color-dark);
+    --form-error-text-color: var(--color-red);
 }
 
 .dark {

@@ -24,7 +24,19 @@
             <div class="col col-lg-5">
                 <form method="post" class="form">
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    <div class="errors">{{ form.non_field_errors }}</div>
+                    <div class="form__input-wrap">
+                        {{ form.username }}
+                        {% if form.username.errors %}
+                        <div class="errors">{{ form.username.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form__input-wrap">
+                        {{ form.password }}
+                        {% if form.password.errors %}
+                        <div class="errors">{{ form.password.errors }}</div>
+                        {% endif %}
+                    </div>
                     <button type="submit" class="form__submit">Отправить</button>
                 </form>
             </div>
