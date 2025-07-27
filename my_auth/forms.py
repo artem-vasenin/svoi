@@ -17,7 +17,10 @@ class CustomLoginForm(AuthenticationForm):
 
 
 class CodeForm(forms.Form):
-    code = forms.CharField(max_length=6)
+    code = forms.CharField(
+        max_length=6,
+        widget=forms.EmailInput(attrs={'class': 'form__input', 'placeholder': 'Введите код*'})
+    )
 
 
 class CustomRegForm(forms.Form):
