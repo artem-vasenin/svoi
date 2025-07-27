@@ -16,6 +16,10 @@ class CustomLoginForm(AuthenticationForm):
     }))
 
 
+class CodeForm(forms.Form):
+    code = forms.CharField(max_length=6)
+
+
 class CustomRegForm(forms.Form):
     first_name = forms.CharField(
         label='Имя',
@@ -117,7 +121,8 @@ class CustomRegForm(forms.Form):
             username=data['username'],
             email=data['email'],
             password=data['password'],
-            first_name=data['first_name']
+            first_name=data['first_name'],
+            is_active=False,
         )
-        # Тут можно создать профиль с телефоном, датой рождения, reason
+
         return user

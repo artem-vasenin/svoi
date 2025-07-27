@@ -142,3 +142,13 @@ MEDIA_ROOT = BASE_DIR / 'uploads'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
+
+# Email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_USE_TLS = False
+EMAIL_HOST_USER = 'sshlyuz@yandex.ru'
+EMAIL_HOST_PASSWORD = 'zpezexexcsjsrnsv'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
